@@ -5,6 +5,7 @@ It performs type checking and casting for floats to integers.
 The results are returned as the sum of the two numbers.
 """
 
+
 def add_integer(a, b=98):
     """
     Adds two integers.
