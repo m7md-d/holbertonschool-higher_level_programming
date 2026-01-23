@@ -2,5 +2,16 @@
 
 >>> add_integer(12, 12)
 24
+
 >>> add_integer(2)
 100
+
+>>> add_integer(float('inf'), 2)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
