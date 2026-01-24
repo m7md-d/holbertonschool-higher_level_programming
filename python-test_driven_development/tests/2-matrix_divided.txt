@@ -58,3 +58,20 @@ Test 9: Error - Division by zero
     Traceback (most recent call last):
     ...
     ZeroDivisionError: division by zero
+
+Test 10: Infinity check:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(matrix, float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Test 11: missing arguments (1 argument missing):
+    >>> matrix_divided([[1, 2], [3, 4]])
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Test 12: missing arguments (2 arguments missing):
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
