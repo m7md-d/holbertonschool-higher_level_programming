@@ -14,14 +14,14 @@ def matrix_divided(matrix, div):
 
     Returns:
         list: A new matrix representing the result of the division
-        
+
     Raises:
         TypeError: If matrix is not a list of lists of integers/floats
         TypeError: If each row of the matrix does not have the same size
         TypeError: If div is not a number (integer or float)
         ZeroDivisionError: If div is equal to 0
     """
-    
+
     matrix_err = "matrix must be a matrix (list of lists) of integers/floats"
 
     if not isinstance(matrix, list) or len(matrix) == 0:
@@ -41,7 +41,7 @@ def matrix_divided(matrix, div):
 
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-    
+
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
