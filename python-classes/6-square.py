@@ -10,7 +10,7 @@ class Square:
     Defines a square shape and manages its attributes and behavior.
     This class is currently a placeholder for future square-related logic.
     """
-    def __init__(self, size=0, position = (0, 0)):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Initialize a new Square instance.
 
@@ -52,9 +52,9 @@ class Square:
         Setter: Sets the private __position with validation logic.
         """
         if (not isinstance(value, tuple) or
-            len(value) != 2 or
-            not all(isinstance(num, int) for num in value) or
-            not all(num >= 0 for num in value)):
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
