@@ -5,4 +5,7 @@ Simple rectangle!
 
 
 class Rectangle:
+    """
+    Rectangle class
+    """
     pass
