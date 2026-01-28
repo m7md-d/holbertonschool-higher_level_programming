@@ -79,9 +79,3 @@ class Rectangle:
             moraba3 += ("#" * self.__width)
             c = "\n"
         return moraba3
-
-    def __repr__(self):
-        """
-        return a string representation of the rectangle
-        """
-        return f"Rectangle({self.__width}, {self.__height})"
