@@ -75,8 +75,8 @@ class Rectangle:
         moraba3 = ""
         c = ""
         for i in range(self.__height):
-            moraba3 + c
-            moraba3 + ("#" * self.__width)
+            moraba3 += c
+            moraba3 += ("#" * self.__width)
             c = "\n"
         return moraba3
 
