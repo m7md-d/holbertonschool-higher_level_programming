@@ -1,0 +1,56 @@
+============================
+How to use 1-my_list.py
+============================
+
+Importing the MyList class:
+>>> MyList = __import__('1-my_list').MyList
+
+Verification of Inheritance:
+>>> issubclass(MyList, list)
+True
+
+Basic functionality test:
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+Empty list test:
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
+
+Single element test:
+>>> single = MyList([10])
+>>> single.print_sorted()
+[10]
+
+Negative numbers test:
+>>> negatives = MyList([1, -5, 0, 10, -2])
+>>> negatives.print_sorted()
+[-5, -2, 0, 1, 10]
+
+Non-destructive check (verify original list remains unchanged):
+>>> original = [3, 2, 1]
+>>> my_list = MyList(original)
+>>> my_list.print_sorted()
+[1, 2, 3]
+>>> print(my_list)
+[3, 2, 1]
+
+Large numbers and duplicates:
+>>> mixed = MyList([100, 1, 100, 2, 5, 2])
+>>> mixed.print_sorted()
+[1, 2, 2, 5, 100, 100]
+
+Type verification in list contents:
+>>> all(isinstance(x, int) for x in mixed)
+True
