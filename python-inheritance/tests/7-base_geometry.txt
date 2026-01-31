@@ -75,3 +75,17 @@ Check integer_validator with a string that looks like a number:
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] age must be an integer
+
+Check integer_validator with missing value (only one argument):
+    >>> try:
+    ...     bg.integer_validator("age")
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] integer_validator() missing 1 required positional argument: 'value'
+
+Check integer_validator with Float (Should raise TypeError):
+    >>> try:
+    ...     bg.integer_validator("age", 3.14)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] age must be an integer
