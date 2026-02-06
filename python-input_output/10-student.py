@@ -26,9 +26,15 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-def to_json(self, attrs=None):
+    def to_json(self, attrs=None):
         """
         Public method that retrieves a dictionary
         representation of a Student instance.
         """
+        if isinstance(attrs, list) and all(isinstance(i, str) for i in attrs):
+            res = {}
+            for i in attrs:
+                if i in self.__dict__:
+                    res[i] = self.__dict__[i]
+            return res
         return self.__dict__
