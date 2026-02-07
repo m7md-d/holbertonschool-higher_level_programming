@@ -17,6 +17,12 @@ class CustomObject:
         self.age = age
         self.is_student = is_student
 
+    def display(self):
+        """
+        Method to print out the object's attributes.
+        """
+        print(f"Name: {self.name}\nAge: {self.age}\nIs Student: {self.is_student}")
+
     def serialize(self, filename):
         """
         Method will take a filename as its parameter. Using the pickle module.
@@ -24,7 +30,7 @@ class CustomObject:
         try:
             with open(filename, "wb") as f:
                 pickle.dump(self, f)
-        except Exception:
+        except (FileNotFoundError, EOFError):
             return
 
     @classmethod
@@ -36,5 +42,5 @@ class CustomObject:
         try:
             with open(filename, "rb") as f:
                 return pickle.load(f)
-        except Exception:
+        except (FileNotFoundError, EOFError):
             return
