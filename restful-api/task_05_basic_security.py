@@ -80,7 +80,7 @@ def admin_only():
     """Route accessible only by admins"""
     claims = get_jwt()
     if claims.get('role') != 'admin':
-        abort(403)
+        return jsonify({"error": "Admin access required"}), 403
     return "Admin Access: Granted"
 
 
