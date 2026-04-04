@@ -5,6 +5,20 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+def read_json():
+    with open('products.json', 'r') as f:
+        return json.load(f)
+
+def read_csv():
+    products = []
+    with open('products.csv', 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            row['id'] = int(row['id'])
+            row['price'] = float(row['price'])
+            products.append(row)
+    return products
+
 def read_sql(product_id=None):
     products = []
     try:
